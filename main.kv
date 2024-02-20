@@ -1,0 +1,19 @@
+#:kivy 1.0
+
+<MiScreen>
+    customer: customer
+
+    BoxLayout:
+        orientation: "vertical"
+
+        Label:
+            size_hint: (.5, None)
+            id: customer
+            text: root.getcust()
+
+        Button:
+            text: "Ping"
+            on_press: root.pingCust()
+            size_hint: (.8, None)
+            size: (None, 20)
+

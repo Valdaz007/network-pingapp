@@ -1,3 +1,5 @@
+from pingmods.ping import *
+
 class Client:
     def __init__(self, ip, name, province, urban, id):
         self.id = id
@@ -24,3 +26,7 @@ class Client:
     
     def show(self):
         return f"ID: {self.id}\nName: {self.name}\nIP: {self.ip}\nProvince: {self.province}\nUrban: {self.urban}"
+    
+    def pingIP(self) -> str:
+        ping(self.getIP())
+        return result()
