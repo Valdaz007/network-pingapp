@@ -1,0 +1,11 @@
+
+Pinging 202.58.131.150 with 32 bytes of data:
+Reply from 202.58.131.150: bytes=32 time=110ms TTL=244
+Reply from 202.58.131.150: bytes=32 time=103ms TTL=244
+Reply from 202.58.131.150: bytes=32 time=97ms TTL=244
+Reply from 202.58.131.150: bytes=32 time=102ms TTL=244
+
+Ping statistics for 202.58.131.150:
+    Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),
+Approximate round trip times in milli-seconds:
+    Minimum = 97ms, Maximum = 110ms, Average = 103ms

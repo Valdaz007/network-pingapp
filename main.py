@@ -1,16 +1,18 @@
 import kivy
 from kivy.app import App
-from kivy.uix.boxlayout import BoxLayout
+from kivy.uix.gridlayout import GridLayout
 from kivy.properties import ObjectProperty
+
+import pandas as pd
+df = pd.read_csv('client.csv')
 
 from pingmods.client import Client
 
 
-class MiScreen(BoxLayout):
-    cust1 = Client("202.58.131.150", "JBL", "POM", "Motukea", 1)
-    # cust2 = Client("202.58.131.182", "NEA", "POM", "Waigani Central", 3)
-    # cust3 = Client("202.58.131.242", "RTA", "POM", "Kunai St", 4)
+class MiScreen(GridLayout):
     customer = ObjectProperty(None)
+
+    clients = [Client(df['ip'][row],df['name'][row],df['province'][row],df['urban'][row],df['id'][row]) for row in df.index]
 
     def getcust(self):
         return self.cust1.show()

@@ -2,18 +2,67 @@
 
 <MiScreen>
     customer: customer
-
+    rows: 2
+    
     BoxLayout:
-        orientation: "vertical"
+        orientation: 'vertical'
+        padding: 50
 
-        Label:
-            size_hint: (.5, None)
-            id: customer
-            text: root.getcust()
+        ScrollView:
+            do_scroll_x: False
+            do_scroll_y: True
 
-        Button:
-            text: "Ping"
-            on_press: root.pingCust()
-            size_hint: (.8, None)
-            size: (None, 20)
+            Label:
+                id: customer
+                size_hint_y: None
+                height: self.texture_size[1]
+                text_size: self.width, None
+                padding: 10, 10
+                color: [0,1,0,1]
+                text:
+                    'really some amazing text\n' * 50
 
+
+    GridLayout:
+        cols: 2
+
+        background_color: (1,1,1,1)
+        canvas.before:
+            Color: 
+                rgba: self.background_color
+            Rectangle:
+                size: self.size
+                pos: self.pos
+
+        BoxLayout:
+            orientation: 'vertical'
+            size_hint: (.5, 1)
+
+            Button:
+                text: "Ping Client"
+                on_press: root.pingCust()
+
+            Button:
+                text: "Add Client"
+
+            Button:
+                text: "Remove Client"
+
+            Button:
+                text: "Ping"
+
+            Button:
+                text: "Ping"
+
+        BoxLayout:
+            orientation: "vertical"
+
+            Label:
+                text: root.getcust()
+                background_color: (0,0,1,1)
+                canvas.before:
+                    Color: 
+                        rgba: self.background_color
+                    Rectangle:
+                        size: self.size
+                        pos: self.pos
